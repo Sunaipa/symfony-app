@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        {{ dump(trainingResults) }}
+        {% for training in trainingResults %}
+            <div class="col-md-6">
+            </div>
+            <card>
+                <h3>
+                    {{ training.trainingProgram.degree.label }}
+                </h3>
+                <p>
+                    {{ training.trainingProgram.label }}
+                </p>
+                <p>
+                    {{ training.startDate|date }}
+                </p>
+            </card>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -3,10 +3,10 @@
         <span class="navbar-brand mb-0 h1">M3i</span>
         <div id="formSearchGlobal">
            <button id="openSearchFormation" class="btn">rechercher votre avenir !</button>
-            <form method="POST" id="formationSearch">
-                <input type="text" placeholder="patissier" name="label">
+            <form action="{{ path('app_catalogue_search',{'label':'search', 'date':'date'}) }}" method="POST" id="formationSearch">
+                <input type="text" placeholder="patissier" name="search">
                 <input  type="date" name="date">
-                <input type="submit" value="recherchez!" class="btn">
+                <input  type="submit" value="recherchez!" class="btn">
             </form>
         </div>
         <div>
