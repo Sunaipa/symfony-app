@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page Catalogue{% endblock %}
+
+
+{% block body %}
+    <div class=" ms-5 me-5">
+        <div class="d-flex justify-content-between flex-wrap ms-5 me-5">
+        {% for training in allTrainings %}
+            <div class="border border-black m-2 p-2  block">
+                <p class="label m-0">{{ training.trainingProgram.label | upper}} (niveau : {{ training.trainingProgram.degree.rncpLevel }})</p>
+                <p class="detail">{{ training.trainingCenter.city }} ({{ training.trainingCenter.zipcode }})</p>
+                <p class="duree "> <b>Durée : </b>{{ training.trainingProgram.duration }} mois</p>
+
+                <div class="d-flex justify-content-center">
+                    <p class="date">Du {{ training.startDate|date("d/m/Y") }}  au  {{ training.endDate|date("d/m/Y") }}</p>
+                </div>
+
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+
+    {% block stylesheets %}
+        {{ parent() }}
+        <link rel="stylesheet" href="/assets/css/catalogueAll.css">
+    {% endblock %}
+
+
+{% endblock %}
+

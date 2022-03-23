@@ -1,0 +1,17 @@
+.block {
+    background-color: bisque;
+}
+.detail {
+    font-style: italic;
+    font-size: 80%;
+}
+.label {
+    font-weight: bolder;
+    font-size: larger;
+}
+.duree{
+}
+.date{
+    font-weight: bold;
+    color: #7b7b7b;
+}
