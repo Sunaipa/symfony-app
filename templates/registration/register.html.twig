@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+
+                {{ form_start(registrationForm) }}
+                    <h1 class="is-size-2 has-text-centered has-text-white"> Inscription a la plateforme Mirror</h1>
+                        {{ form_row(registrationForm.email) }}
+
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: 'Mot de passe'
+                    }) }}
+
+
+                    <button type="submit" class="btn btn-primary btn-lg my-3">M'inscrire</button>
+                {{ form_end(registrationForm) }}
+{% endblock %}

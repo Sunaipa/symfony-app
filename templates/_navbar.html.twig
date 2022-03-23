@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">M3i</span>
+        <div>
+            {% if is_granted('ROLE_USER') %}
+            <a href="/deconnexion" class="btn btn-sm btn-outline-danger">DÉCONNEXION</a>
+            {% else %}
+            <a href="/connexion" class="btn btn-sm btn-outline-info">CONNEXION</a>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="/inscription" class="btn btn-sm btn-outline-success">INSCRIPTION</a>
+            {% endif %}
+
+
+        </div>
+    </div>
+</nav>
