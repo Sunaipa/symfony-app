@@ -13,7 +13,7 @@ use Symfony\Component\Validator\Constraints\Date;
 
 class CatalogueController extends AbstractController
 {
-    #[Route('/catalogue/{label}/{date}', name: 'app_catalogue_search',methods: ['POST'])]
+    #[Route('/catalogue/', name: 'app_catalogue_search',methods: ['GET'])]
     public function search(Request $request, TrainingRepository $trainingRepository): Response
     {
 
