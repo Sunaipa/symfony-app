@@ -19,10 +19,10 @@ class Training
     #[ORM\Column(type: 'date')]
     private $endDate;
 
-    #[ORM\ManyToOne(targetEntity: TrainingProgram::class)]
+    #[ORM\ManyToOne(targetEntity: TrainingProgram::class, cascade: ['persist'])]
     private $trainingProgram;
 
-    #[ORM\ManyToOne(targetEntity: TrainingCenter::class)]
+    #[ORM\ManyToOne(targetEntity: TrainingCenter::class, cascade: ['persist'])]
     private $trainingCenter;
 
     public function getId(): ?int

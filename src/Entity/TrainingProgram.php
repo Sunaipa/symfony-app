@@ -19,7 +19,7 @@ class TrainingProgram
     #[ORM\Column(type: 'integer')]
     private $duration;
 
-    #[ORM\ManyToOne(targetEntity: Degree::class)]
+    #[ORM\ManyToOne(targetEntity: Degree::class, cascade: ['persist'])]
     private $degree;
 
     public function getId(): ?int

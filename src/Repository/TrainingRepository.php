@@ -3,9 +3,12 @@
 namespace App\Repository;
 
 use App\Entity\Training;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
+use Doctrine\ORM\Query;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -73,4 +76,16 @@ class TrainingRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function getTrainingBySearchTerm(?string $searchTerm, DateTime $date){
+        $qb = $this->createQueryBuilder('t')
+            ->join('t.trainingProgram','tp')
+            ->where('tp.label LIKE :search AND 
+            t.startDate >= :date')
+            ->setParameter(':search',"%$searchTerm%")
+        ->setParameter(':date',$date);
+
+        return $qb->getQuery()->getResult();
+    }
+
 }
