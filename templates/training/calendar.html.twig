@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Training index{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{asset('fullcalendar/main.css')}} rel='stylesheet' " />
+{% endblock %}
+
+{% block javascripts %}
+    <script src='{{asset('fullcalendar/main.js')}}'></script>
+    <script src='{{asset('training_calendar.js')}}'></script>
+{% endblock %}
+
+{% block body %}
+    <h1>Couscous</h1>
+    <div id="calendar"></div>
+{% endblock %}
